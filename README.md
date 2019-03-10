@@ -12,3 +12,4 @@
 - Auto-prefixer
 - Axios
 - Babel
+- Eslint
