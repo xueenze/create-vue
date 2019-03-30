@@ -8,6 +8,12 @@ import api from '@/utils/api';
 
 import './less/index.less';
 
+import $ from 'jquery';
+
+// 引入Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min';
+
 // 注册路由
 Vue.use(VueRouter);
 // 将ajax请求方法赋给$ajax
