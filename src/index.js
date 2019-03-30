@@ -11,7 +11,7 @@ import './less/index.less';
 // 注册路由
 Vue.use(VueRouter);
 // 将ajax请求方法赋给$ajax
-Vue.prototype.$ajax = api;
+Vue.prototype.$apiAxios = api;
 
 new Vue({
     el: '#app',
