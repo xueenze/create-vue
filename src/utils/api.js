@@ -1,23 +1,27 @@
 import axios from 'axios';
+import { httpConfig } from './config';
 
-let httpServer = {
-    post(url, data, config) {
-        if (!config) {
-            config = {
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-            };
-        }
-        return axios.post(url, data, config).then(res => {
-            return Promise.resolve(res.data);
-        });
-    },
-    get(url, data) {
-        return axios.get(url, { params: data }).then(res => {
-            return Promise.resolve(res.data);
-        });
-    },
-};
+let apiAxios = axios.create({
+    baseURL: httpConfig.API_HOST,
+    timeout: 10000
+});
 
-export default httpServer;
+apiAxios.interceptors.request.use(config => {
+    return Object.assign({}, config, { 
+        headers: {} 
+    });
+});
+
+apiAxios.interceptors.response.use(
+    response => {
+        console.log(response);
+
+        return response.data;
+    },
+    error => {
+        console.log(error);
+        return;
+    }
+);
+
+export default apiAxios;

@@ -1,14 +1,18 @@
 module.exports = {
     root: true, 
     parserOptions: {
-        sourceType: 'module'
+        ecmaVersion: 6,
+        sourceType: 'module',
+        parser: "babel-eslint"
     },
     env: {
         browser: true,
+        es6: true
     },
     rules: {
+        "indent": ["error", 4],
         "semi": ["error", "always"],
-        "no-console": "error",
+        "no-console": "off",
         "arrow-parens": 0
     }
 }
