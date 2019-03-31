@@ -38,6 +38,17 @@ module.exports = {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
                 loader: 'url-loader',
             },
+            {
+                test: require.resolve('jquery'),
+                use: [{
+                    loader: 'expose-loader',
+                    options: '$'
+                },
+                {
+                    loader: 'expose-loader',
+                    options: 'jQuery'
+                }]
+            }
         ],
     },
     plugins: [
