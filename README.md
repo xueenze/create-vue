@@ -13,3 +13,4 @@
 - Axios
 - Babel
 - Eslint
+- Moment
