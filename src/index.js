@@ -6,6 +6,7 @@ import router from './router';
 import store from './store';
 import api from '@/utils/api';
 
+import 'normalize.css';
 import './less/index.less';
 
 // 注册路由
