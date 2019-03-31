@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "创建vue工程",
   "scripts": {
-    "dev": "webpack-dev-server --hot --open --inline --config build/webpack.dev.js --api_env botme",
+    "dev": "webpack-dev-server --hot --open --inline --config build/webpack.dev.js",
     "build": "webpack --config build/webpack.prod.js"
   },
   "repository": {
