@@ -1,14 +1,16 @@
 import axios from 'axios';
-import { httpConfig } from './config';
+import {
+    httpConfig,
+} from './config';
 
 let apiAxios = axios.create({
     baseURL: httpConfig.API_HOST,
-    timeout: 10000
+    timeout: 10000,
 });
 
 apiAxios.interceptors.request.use(config => {
-    return Object.assign({}, config, { 
-        headers: {} 
+    return Object.assign({}, config, {
+        headers: {},
     });
 });
 
@@ -20,7 +22,6 @@ apiAxios.interceptors.response.use(
     },
     error => {
         console.log(error);
-        return;
     }
 );
 
